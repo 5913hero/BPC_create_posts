@@ -1,0 +1,183 @@
+import React, { Component } from 'react';
+import { Image } from 'react-native';
+import { Platform, StyleSheet, Text, View } from 'react-native';
+import { Container, Form, Textarea, Card, CardItem, Content,Segment, Left, Thumbnail, Right, Button, Icon, ListItem,CheckBox, Title, Input, Body, Item, Badge, StyleProvider } from 'native-base';
+export default class ContentPosts extends Component {
+  constructor() {
+    super();
+    this.state = {
+        imgOpacity: 0
+    }
+}
+
+toggleImage() {
+    if ( this.state.imgOpacity === 1 ) {
+        this.setState({
+            imgOpacity: 0
+        })    
+    } else {
+        this.setState({
+            imgOpacity: 1
+        }) 
+    }
+}
+  render() {
+    return (
+      <Container>
+    
+        <Card >
+          <CardItem>
+            <Left>
+              <Thumbnail source={{ uri: 'https://scontent.fbkk2-7.fna.fbcdn.net/v/t1.0-9/26992372_1614207851992487_8985762252003678099_n.jpg?_nc_cat=101&_nc_ht=scontent.fbkk2-7.fna&oh=4960cf6587e07bb1961163a5ce0f969a&oe=5C664C82' }} style={{ height: 50, width: 50 }} />
+              <Body>
+                <Text style={{ fontSize: 12 }}>Hero_pks</Text>
+                <Text style={{ fontSize: 10 }} note>Advanced </Text>
+                <Text style={{ fontSize: 11 }} note>Aug 25, 1999 | 4:30 am </Text>
+              </Body>
+            </Left>
+          
+          {/* <CardItem>
+            <Body>
+              <Image source={{uri: 'Image URL'}} style={{height: 200, width: 200, flex: 1}}/>
+              <Text>
+                How to play basketball?
+                </Text>
+            </Body>
+          </CardItem>
+          <View style={styles.box1} > */}
+
+          {/* <Button style={styles.box1}>
+            <Icon active name="ei-pencil" />
+            <Text style={styles.text}>+JOIN</Text>
+          </Button> */}
+
+                
+            <Form>
+                <Textarea rowSpan={3} bordered placeholder="Textarea" />
+            </Form>
+            </CardItem>
+
+                
+            
+               
+            
+        </Card>
+        
+        <ListItem>
+        <Body>
+              <Text>Color</Text>
+            </Body>
+          
+            <CheckBox checked={false} color="blue"/>
+            <CheckBox checked={false} color="purple"/>
+            <CheckBox checked={false} color="red"/>
+            <CheckBox checked={false} color="orange"/>
+            <CheckBox checked={false} color="green"/>
+            <CheckBox checked={false} color="black"/>
+          </ListItem>
+
+          <Segment>
+          <Button first>
+            <Text>Your location</Text>
+          </Button>
+          <Button
+          onPress= {this.toggleImage}>
+            <Text>Choose location</Text>
+          </Button>
+          <Button last>
+            <Text>Hide location</Text>
+          </Button>
+        </Segment>
+        <Image
+                    style={{width: 50, height: 50, opacity: this.state.imgOpacity}}
+                    source={{uri:'https://images.droidsans.com/wp-content/uploads/2018/07/google-offline-maps-cover.jpg'}}
+                />
+                
+
+
+        {/* <Content>
+          <Card style={{ flex: 1 }}>
+            <CardItem>
+              <Left>
+                <Thumbnail source={{ uri: 'https://www.catdumb.com/wp-content/uploads/2018/03/1-592.jpg' }} />
+                <Body>
+                  <Text style={{ fontSize: 12 }}>Kuroky</Text>
+                  <Text style={{ fontSize: 10 }} note>Beginner </Text>
+                  <Text style={{ fontSize: 11 }} note>Aug 6, 2018 | 2:20 am </Text>
+                </Body>
+              </Left>
+            </CardItem>
+            <CardItem>
+              <Body> */}
+
+                {/* <Image source={{uri: 'Image URL'}} style={{height: 200, width: 200, flex: 1}}/> */}
+                {/* <Text>
+                  Get this shit inside your head!
+                </Text>
+              </Body>
+            </CardItem>
+            
+            <CardItem>
+              <Left>
+                <Button transparent style={{ marginLeft: 240 }} textStyle={{ color: '#87838B' }}>
+                  <Icon name="logo-github" />
+                  <Text> + JOIN </Text>
+                </Button>
+              </Left>
+            </CardItem>
+            
+          </Card>
+         
+        </Content> */}
+        
+        <Item>
+            <Button style={styles.box2}>
+                {/* <Icon active name="ei-pencil" /> */}
+                <Text style={styles.text}>Cancle</Text>
+            </Button>
+                <Button style={styles.box1}>
+                {/* <Icon active name="ei-pencil" /> */}
+                <Text style={styles.text}>Post</Text>
+            </Button>
+                </Item>
+               
+         
+      </Container>
+
+    )
+  }
+}
+const styles = StyleSheet.create({
+    container: {
+      flex: 1
+    },
+    box1: {
+      position: 'absolute',
+      top: 80,
+      left: 290,
+      width: 60,
+      height: 30,
+  
+      backgroundColor: '#00CCCC'
+    },
+    box2: {
+      position: 'absolute',
+      top: 80,
+      left: 10,
+      width: 70,
+      height: 30,
+      backgroundColor: 'blue'
+    },
+    box3: {
+      position: 'absolute',
+      top: 120,
+      left: 120,
+      width: 100,
+      height: 100,
+      backgroundColor: 'green'
+    },
+    text: {
+      color: '#ffffff',
+      fontSize: 20,
+    }
+  });
